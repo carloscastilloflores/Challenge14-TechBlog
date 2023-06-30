@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 class User extends Model {
     checkPassword(LoginPw) {
-        return bcrypt.compareSync
+        return bcrypt.compareSync(loginPw, this.password)
     }
 }
 
@@ -28,6 +28,14 @@ User.init(
                 len: [6]
             }
         }
+        // post_id: {
+        //     type: DataTypes.INTEGER, 
+        //     references: {
+        //       model: 'post', 
+        //       key: 'post_id'
+        //     }
+        //   }
+
     },
     {
         hooks: {

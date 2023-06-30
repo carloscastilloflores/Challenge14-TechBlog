@@ -5,7 +5,6 @@ const userData = require('./userData.json');
 const postsData = require('./postsData.json');
 
 
-
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
@@ -14,11 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const clients = await Client.bulkCreate(clientData)
-  const products = await Product.bulkCreate(productData);
-  const sales = await Sale.bulkCreate(saleData)
-  const saleProducts = await SaleProduct.bulkCreate(saleProductData)
-
+  const posts = await Post.bulkCreate(postsData)
 
   process.exit(0);
 };

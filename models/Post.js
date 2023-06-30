@@ -1,20 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
-class Post extends Model {
-    checkPassword(LoginPw) {
-        return bcrypt.compareSync
-    }
-}
+
+class Post extends Model {}
 
 Post.init( 
     {
-        postId: {
+        id: {
             type: DataTypes.INTEGER, 
             allowNull: false, 
             primaryKey: true, 
-            autoIncrement: true
+            autoIncrement: true,
+
         },
         title: {
             type: DataTypes.STRING, 
@@ -29,6 +26,13 @@ Post.init(
             type: DataTypes.INTEGER, 
             allowNull: false,
         },
+        user_id: {
+            type: DataTypes.STRING, 
+            references: {
+                model: 'user', 
+                key: 'id'
+              }
+        }
     },
     {
         // hooks: {
