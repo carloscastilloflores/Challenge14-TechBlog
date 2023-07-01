@@ -1,6 +1,8 @@
 const router = require('express').Router(); 
 const sequelize =require('../config/connection');
-const { Post, User } = require('../models');
+const withAuth = require('../utils/helpers');
+const { Post, User, Comment } = require('../models');
+
 
 router.get('/login', async (req,res)=>{   
     try{
@@ -46,3 +48,4 @@ router.get('/', (req, res) => {
     });
 });
 //Get posts from user 
+module.exports = router;
