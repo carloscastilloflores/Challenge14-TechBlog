@@ -9,10 +9,12 @@
 <body>
         <nav class="bg-light p-3 px-5"> 
             <div class="d-flex px-5 pt-4 justify-content-end">
-                <a class="h5 text-decoration-none link-dark" href="/home">Home </a>
+                <a class="h5 text-decoration-none link-dark" href="/">Home </a>
                 <a class="h5 px-4 text-decoration-none link-dark" href="/dashboard">Dashboard </a>
                 <a class="h5 px-4 text-decoration-none link-dark" href="/login">Log In </a>
-                <a class="h5 px-4 text-decoration-none link-dark" href="/logout">Log Out </a>
+                {{#if loggedIn}}
+                <a class="h5 px-4 text-decoration-none link-dark" id="logout" href="/logout">Log Out </a>
+                {{/if}}
             </div>
           
             <div>
@@ -31,6 +33,12 @@
         </ul>
         </div> --}}
     </header>
+    <main> 
             {{{body}}}
+    </main>
+    {{#if loggedIn}}
+    <script src="./js/logout.js"></script>
+    {{/if}}
+    <script src="./js/login.js"></script>
 </body>
 </html>

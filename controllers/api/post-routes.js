@@ -88,7 +88,7 @@ router.delete('/:id', (req,res) => {
     })
     .then(postsData => {
         if (!postsData) {
-            res.status(404).json({ message: 'No User found with this id'}); 
+            res.status(404).json({ message: 'No User found with this id 0'}); 
             return;
         }
         res.json(postsData);

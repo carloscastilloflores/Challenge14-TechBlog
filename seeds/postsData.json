@@ -4,34 +4,34 @@
         "title": "The Future of Artificial Intelligence: A Comprehensive Overview",
         "content": "In recent years, artificial intelligence (AI) has made significant advancements, transforming various industries. This blog post provides a comprehensive overview of the future of AI. ",
         "date": "06152023",
-        "user": ""
+        "user_id": "2"
     },
     {
         "postId": "2",
         "title": "5G Technology: Revolutionizing Connectivity and Beyond",
         "content": "The arrival of 5G technology has brought forth a new era of connectivity, promising faster speeds and lower latency. ",
         "date":"0732023",
-        "user": ""
+        "user_id": "5"
     },
     {
         "postId": "3",
         "title": "The Rise of Virtual Reality: Immersive Experiences at Your Fingertips",
         "content": "Virtual Reality (VR) has come a long way, evolving from a niche technology to a mainstream phenomenon. ",
         "date":"08122023",
-        "user": ""
+        "user_id": "1"
     },
     {
         "postId": "4",
         "title": "Cybersecurity in the Digital Age: Protecting Your Online Presence",
         "content": "As our lives become increasingly digitized, the importance of cybersecurity has never been greater.",
         "date": "0972023",
-        "user": ""
+        "user_id": "5"
     },
     {
         "postId": "5",
         "title": "The Promise of Quantum Computing: Unlocking Unprecedented Power",
         "content": "Quantum computing represents a paradigm shift in computation, promising unparalleled processing power to solve complex problems. ",
         "date": "10192023",
-        "user": ""
+        "user_id": "1"
     }
 ]
