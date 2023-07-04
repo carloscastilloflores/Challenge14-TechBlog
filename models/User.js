@@ -42,12 +42,7 @@ User.init(
 
     },
     {
-        // hooks: {
-        //     beforeCreate: async (newUserData) => {
-        //       newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        //       return newUserData;
-        //     },
-        //   },
+
         hooks: {
             // set up beforeCreate lifecycle hook functionality
             async beforeCreate (newUserData) {

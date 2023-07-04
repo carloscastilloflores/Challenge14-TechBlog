@@ -1,12 +1,13 @@
+{{#each posts as |post|}}
 <header class="p-3 mb-4 header ">
     <div class="container">
-    <!-- <p class="lead">I am from Mexico.</p> -->
     <div class="d-flex justify-content-between">
-        <div class="h2 mr-auto p-2">Why MVC is so important</div>
-        <div class="lead p-2">Posted by CarlosCastillo on 30/06/2023</div>   
+        <div class="h2 mr-auto p-2">{{title}}Hello is this working?</div>
+        <div class="lead p-2">Posted by {{user_id}} on {{date}}</div>     
     </div>
     <ul class="list-group" >
-        <li class="list-group-item p-3">MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.</li>
+        <li class="list-group-item p-3">{{content}}</li>
     </ul>
     </div>
+     {{/each}}
  </header>
