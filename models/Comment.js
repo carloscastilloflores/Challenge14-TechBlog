@@ -8,6 +8,7 @@ Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
@@ -31,11 +32,7 @@ Comment.init(
             comment: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-            date: {
-                type: DataTypes.DATE, 
-                allowNull: false
-            }
+        }
 },
     {
 

@@ -26,7 +26,7 @@ router.get('/dashboard', (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'user_id', 'post_id'],
+          attributes: ['id', 'comment', 'user_id', 'post_id'],
           include: {
             model: User,
             attributes: ['email']
@@ -58,7 +58,7 @@ router.get('/dashboard', (req, res) => {
           include: [
               {
                   model: Comment, 
-                  attributes: ['id', 'comment_text', 'post_id', 'user_id',], 
+                  attributes: ['id', 'comment', 'post_id', 'user_id',], 
                   include: {
                       model: User, 
                       attributes: ['email']
