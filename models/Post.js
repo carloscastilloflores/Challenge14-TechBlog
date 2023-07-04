@@ -23,7 +23,7 @@ Post.init(
             allowNull: false, 
         },
         date: {
-            type: DataTypes.INTEGER, 
+            type: DataTypes.DATE, 
             allowNull: false,
         },
         user_id: {
