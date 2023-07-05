@@ -29,7 +29,7 @@ router.post('/', withAuth, async (req, res) => {
 //       });
 //   });
 
-router.post('/:id', withAuth, async (req,res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const post = await Post.update({
         title:req.body.title,

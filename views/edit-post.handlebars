@@ -1,0 +1,20 @@
+<div id="login" class="my-5 mx-5"> 
+    <h2 class="page-title px-4 py-2">Edit Post</h2>
+    <form id="postForm" class="form px-5 py-2">
+      <div class="form-group row">
+        <label for="post-title" class="lead p-2">Title:</label>
+        <input class="form-input h2 list-group-item p-3 border border-secondary" type="text" id="post-title" value="{{posts.title}}"/>
+      </div>
+      <div class="form-group row">
+        <label for="post-content" class="lead p-2">Content:</label>
+        <input class="form-input list-group-item p-3 border border-secondary" type="text" id="post-content" value="{{posts.content}}" />
+      </div>
+      <div class="form-group text-center py-2 pt-4 row">
+        <button class="btn btn-info btn-lg btn-block" id="update" type="submit" data-id="{{posts.id}}">Update</button>
+      </div>
+      <div class="form-group text-center py-2 row">
+        <button class="btn btn-info btn-lg btn-block" id="delete" type="submit" data-id="{{posts.id}}">Delete</button>
+      </div>
+    </form>
+</div>
+<script src="/js/edit-post.js"></script> 
