@@ -12,9 +12,10 @@
             <div class="d-flex px-5 pt-4 justify-content-end">
                 <a class="h5 text-decoration-none link-dark" href="/">Home </a>
                 <a class="h5 px-4 text-decoration-none link-dark" href="/dashboard">Dashboard </a>
-                <a class="h5 px-4 text-decoration-none link-dark" href="/login">Log In </a>
                 {{#if loggedIn}}
                 <a class="h5 px-4 text-decoration-none link-dark" id="logout" href="/logout">Log Out </a>
+                {{else}}
+                 <a class="h5 px-4 text-decoration-none link-dark" href="/login">Log In </a>
                 {{/if}}
             </div>
           

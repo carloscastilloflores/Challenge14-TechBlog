@@ -1,5 +1,5 @@
 const router = require('express').Router(); 
-const sequelize =require('../config/connection');
+const withAuth = require('../utils/auth');
 const { Post, User, Comment } = require('../models');
 
 
@@ -15,13 +15,76 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         })
     } catch(err){
         res.status(400).json(err)
     }
 })
 
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+      const post = await Post.findAll({
+        where: {
+          user_id: req.session.user_id
+        }, 
+        include: {
+          model: User, 
+          attributes: ['email']}
+        });
+  
+      const posts = post.map((postx) => postx.get({ plain: true})); 
+  
+      res.render('dashboard', {
+        posts, 
+        loggedIn: req.session.loggedIn
+      })
+    } catch(err){
+      res.json(err)
+    }
+  });
+  
+  router.get('/dashboard/new', withAuth ,async (req,res)=>{
+    try{
+        const post = await Post.findAll({
+            where:{
+                user_id: req.session.user_id
+            },
+            include: {
+                model: User,
+                attributes: ['email']}
+        });
+
+        const posts = post.map((postx) => postx.get({ plain: true }));
+        
+        res.render('new-post', {
+            posts,
+            loggedIn: req.session.loggedIn 
+        })
+    } catch(err){
+        res.json(err)
+    }  
+})
+
+router.get('/dashboard/edit/:id', withAuth ,async (req,res)=>{
+    try{
+        const post = await Post.findByPk(req.params.id, {
+            include: {
+                model: User,
+                attributes: ['email']}
+            });
+
+        const posts = post.get({ plain: true });
+
+
+        res.render('editpost', {
+            posts,
+            loggedIn: req.session.loggedIn
+        })
+    } catch(err){
+        res.json(err)
+    }  
+})
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -87,8 +150,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/signup', async (req, res) => {
-    res.render('signup');
-})
+
 
 module.exports = router;

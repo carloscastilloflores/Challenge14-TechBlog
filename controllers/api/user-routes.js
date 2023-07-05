@@ -61,6 +61,9 @@ router.post('/', async (req, res) => {
     }
 });
       
+router.get('/signup', async (req, res) => {
+    res.render('signup');
+})
 
 router.post('/login', async (req, res) => {
     try {
@@ -87,6 +90,7 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true; 
+
             res.status(200).json({ email: userData, message: 'You are now logged in!' });
         });
      } catch (err) {
@@ -136,8 +140,7 @@ router.delete('/:id', (req,res) => {
 
 //Logout
 router.post('/logout', (req, res) => {
-    if (req.session.loggedin) {
-
+    if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
       });
