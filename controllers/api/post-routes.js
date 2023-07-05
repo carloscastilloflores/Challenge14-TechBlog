@@ -3,7 +3,7 @@ const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.post('/', withAuth ,async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
       const postData = await Post.create({
         title: req.body.title,
@@ -15,6 +15,19 @@ router.post('/', withAuth ,async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+//   router.post('/', withAuth, (req, res) => {  
+//     Post.create({
+//       title: req.body.title,
+//       content: req.body.content,
+//       user_id: req.session.user_id
+//     })
+//       .then(dbPostData => res.json(dbPostData))
+//       .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+//   });
 
 router.post('/:id', withAuth, async (req,res) => {
     try {

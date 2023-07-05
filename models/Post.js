@@ -10,7 +10,7 @@ Post.init(
             type: DataTypes.INTEGER, 
             allowNull: false, 
             primaryKey: true, 
-            autoIncrement: true,
+            autoIncrement: true
 
         },
         title: {
@@ -20,11 +20,11 @@ Post.init(
         },
         content: {
             type: DataTypes.STRING, 
-            allowNull: false, 
+            allowNull: false
         },
         date: {
             type: DataTypes.DATE, 
-            allowNull: false,
+            defaultValue: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER, 
